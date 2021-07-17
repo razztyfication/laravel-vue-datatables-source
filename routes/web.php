@@ -37,5 +37,5 @@ Route::get('/', function (Request $request) {
         }
     }
     
-    return response()->json($query->paginate($request->per_page));
+    return response()->header('Access-Control-Allow-Origin', '*')->json($query->paginate($request->per_page));
 });
