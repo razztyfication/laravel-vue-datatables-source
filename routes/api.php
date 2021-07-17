@@ -26,8 +26,7 @@ Route::get('table', function (Request $request) {
                      ->orWhere('username', 'like', "%{$request->search}%")
                      ->orWhere('address', 'like', "%{$request->search}%")
                      ->orWhere('phone_number', 'like', "%{$request->search}%")
-                     ->orWhere('company', 'like', "%{$request->search}%")
-                     ->orWhereRaw('CONCAT(first_name, " ", last_name) LIKE "%' . $request->search . '%"');
+                     ->orWhere('company', 'like', "%{$request->search}%");
         });
     }
 
