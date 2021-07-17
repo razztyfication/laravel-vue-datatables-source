@@ -20,13 +20,13 @@ Route::get('table', function (Request $request) {
 
     if ($request->search) {
         $query = $query->where(function($subquery) use ($request) {
-            $subquery->where('first_name', 'like', "%{$request->search}%")
-                     ->orWhere('last_name', 'like', "%{$request->search}%")
-                     ->orWhere('email', 'like', "%{$request->search}%")
-                     ->orWhere('username', 'like', "%{$request->search}%")
-                     ->orWhere('address', 'like', "%{$request->search}%")
-                     ->orWhere('phone_number', 'like', "%{$request->search}%")
-                     ->orWhere('company', 'like', "%{$request->search}%");
+            $subquery->where('first_name', 'LIKE', "'%{$request->search}%'")
+                     ->orWhere('last_name', 'LIKE', "'%{$request->search}%'")
+                     ->orWhere('email', 'LIKE', "'%{$request->search}%'")
+                     ->orWhere('username', 'LIKE', "'%{$request->search}%'")
+                     ->orWhere('address', 'LIKE', "'%{$request->search}%'")
+                     ->orWhere('phone_number', 'LIKE', "'%{$request->search}%'")
+                     ->orWhere('company', 'LIKE', "'%{$request->search}%'");
         });
     }
 
