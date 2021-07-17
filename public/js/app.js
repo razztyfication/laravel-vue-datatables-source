@@ -1865,71 +1865,81 @@ __webpack_require__(/*! laravel-vue-datatables/dist/laravel-vue-datatables.css *
   data: function data() {
     return {
       columns: [{
-        uniqid: 'carlicense',
-        label: 'Registration Number',
-        field: 'carlicense',
+        uniqid: "first_name",
+        label: "Full Name",
+        field: "first_name",
         visible: true,
         sortable: true,
-        sortOrder: 'asc',
-        align: 'center',
-        classes: 'py-2 font-bold text-blue-600',
-        headerClass: 'py-4'
-      }, {
-        uniqid: 'terid',
-        label: 'Device ID',
-        field: 'terid',
-        visible: true,
-        sortable: true,
-        sortOrder: 'asc',
-        align: 'center',
-        classes: 'py-2',
-        headerClass: 'py-4'
-      }, {
-        uniqid: 'registerip',
-        label: 'IP Address',
-        field: 'registerip',
-        visible: true,
-        align: 'center',
+        sortOrder: "asc",
+        align: "center",
         format: function format(val, row) {
-          return "IPADDRESS UNTUK ID ".concat(row.id, ": ").concat(val, ":").concat(row.registerport);
+          return "".concat(val, " ").concat(row.last_name);
         },
-        classes: 'py-2',
-        headerClass: 'py-4'
+        classes: "py-2 font-bold text-blue-600",
+        headerClass: "py-4"
       }, {
-        uniqid: 'transmitip',
-        label: 'IP Address',
-        field: function field(row) {
-          return row.transmitip;
-        },
+        uniqid: "email",
+        label: "Email Address",
+        field: "email",
         visible: true,
-        align: 'center',
-        // format: (val, row) => `${val}:${row.transmitport}`,
-        classes: 'py-2',
-        headerClass: 'py-4'
+        sortable: false,
+        sortOrder: "asc",
+        classes: "py-2",
+        headerClass: "py-4"
       }, {
-        uniqid: 'state',
-        label: 'Device State',
-        field: 'state',
+        uniqid: "username",
+        label: "Username",
+        field: "username",
         visible: true,
-        align: 'center',
-        classes: 'py-2',
-        headerClass: 'py-4'
+        sortable: false,
+        sortOrder: "asc",
+        align: "center",
+        classes: "py-2",
+        headerClass: "py-4"
       }, {
-        uniqid: 'updated_at',
-        label: 'Last Modified',
-        field: 'updated_at',
+        uniqid: "phone_number",
+        label: "Phone Number",
+        field: "phone_number",
+        sortable: false,
+        sortOrder: "asc",
         visible: true,
-        align: 'center',
-        classes: 'py-2',
-        headerClass: 'py-4'
+        classes: "py-2",
+        headerClass: "py-4"
       }, {
-        uniqid: 'actions',
-        label: 'Actions',
-        field: 'id',
+        uniqid: "address",
+        label: "Address",
+        field: "address",
+        sortable: false,
         visible: true,
-        align: 'center',
-        classes: 'py-2',
-        headerClass: 'py-4'
+        classes: "py-2",
+        headerClass: "py-4"
+      }, {
+        uniqid: "company",
+        label: "Company Name",
+        field: "company",
+        sortable: false,
+        sortOrder: "asc",
+        visible: true,
+        classes: "py-2",
+        headerClass: "py-4"
+      }, {
+        uniqid: "updated_at",
+        label: "Last Modified",
+        field: "updated_at",
+        visible: true,
+        align: "center",
+        sortable: false,
+        sortOrder: "asc",
+        classes: "py-2",
+        headerClass: "py-4"
+      }, {
+        uniqid: "actions",
+        label: "Actions",
+        field: "id",
+        visible: true,
+        align: "center",
+        classes: "py-2",
+        headerClass: "py-4"
       }]
     };
   }
