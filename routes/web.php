@@ -37,5 +37,5 @@ Route::get('/', function (Request $request) {
         }
     }
     
-    return $query->paginate($request->per_page);
+    return response()->json($query->paginate($request->per_page));
 });
