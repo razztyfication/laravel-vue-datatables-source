@@ -14,8 +14,11 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', function (Request $request) {
+Route::get('table', function (Request $request) {
     $query = User::query();
 
     if ($request->search) {
@@ -37,5 +40,5 @@ Route::get('/', function (Request $request) {
         }
     }
     
-    return response()->header('Access-Control-Allow-Origin', '*')->json($query->paginate($request->per_page));
+    return response()->json($query->paginate($request->per_page));
 });
