@@ -39,5 +39,7 @@ Route::get('table', function (Request $request) {
         }
     }
     
-    return response()->json($query->paginate($request->per_page));
+    return response()->json($query->paginate($request->per_page)->withQueryString());
 });
+
+\URL::forceScheme('https');
